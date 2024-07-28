@@ -12,8 +12,8 @@ data "aws_iam_policy_document" "assume_role_policy" {
   dynamic "statement" {
     for_each = var.assume_role_statements
     content {
-      effect    = statement.value.effect
-      actions   = statement.value.actions
+      effect  = statement.value.effect
+      actions = statement.value.actions
 
       dynamic "principals" {
         for_each = [{

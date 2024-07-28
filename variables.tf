@@ -6,12 +6,12 @@ variable "role_name" {
 variable "assume_role_statements" {
   description = "List of assume role policy statements."
   type = list(object({
-    effect               = string
-    actions              = list(string)
-    resources            = optional(list(string), ["*"])
-    principal_type       = string
+    effect                = string
+    actions               = list(string)
+    resources             = optional(list(string), ["*"])
+    principal_type        = string
     principal_identifiers = list(string)
-    conditions           = optional(list(object({
+    conditions = optional(list(object({
       test     = string
       variable = string
       values   = list(string)
